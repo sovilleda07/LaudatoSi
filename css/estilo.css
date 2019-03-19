@@ -23,6 +23,16 @@ html{
 .contenedor{
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 20px;
+}
+@media (min-width: 800px) {
+    .contenedor-imagenes{
+        display: flex;
+        justify-content: space-between;
+    }
+    .wrapper {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
 }
 img{
     max-width: 100%;
@@ -95,7 +105,7 @@ el menu se sobreposicione */
     z-index: 2;
 }
 
-/* Cuando la pantalla sea de 900px o menor */
+/* Cuando la pantalla sea de 800px o menor */
 @media (max-width:800px){
     .show-menu-btn,.hide-menu-btn{
         display: block;
@@ -180,10 +190,99 @@ el menu se sobreposicione */
     }
 }
 
+/*Divisor*/
+.divisor{
+    background-color: var(--amarillo);
+    margin: 0;
+    padding: 15px 20px;    
+}
+.texto-divisor{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--blanco);
+    text-align: center;
+}
+
+@media (max-width: 800px){
+    .texto-divisor{
+        font-size: 1.2rem;
+    } 
+}
+
+
+/* Sección de Imágenes */
+.wrapper{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.wrapper img{
+    opacity: 1;
+    display: block;
+    width:100%;
+    height: auto;
+    transition: .5s ease;
+}
+.wrapper p{
+    padding-top: 10px;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+.content{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 60px;
+    color:var(--blanco);
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    background-color: var(--verde);
+}
+.content a{
+    font-size: 1.5rem;
+    display: block;    
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--blanco);
+}
+.overlay{
+    opacity: 0
+}
+.wrapper:hover img{
+    opacity: .5
+}
+.wrapper:hover .overlay{
+    opacity: 1
+}
+@media (max-width: 800px){
+    .content{
+        top: 25%;
+    }
+    .content a{
+        font-size: 1rem;  
+        padding: 10px;
+    }
+    .wrapper p{
+        font-size: 1rem;  
+
+    }
+}
+
 /* Contenido */
 .contenido-principal{
     margin-top: 40px;
 }
+
 /*Footer*/
 .footer-sitio {
     background-color: var(--footer);
