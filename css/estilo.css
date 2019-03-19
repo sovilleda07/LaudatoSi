@@ -230,7 +230,7 @@ el menu se sobreposicione */
 .wrapper p{
     padding-top: 10px;
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .content{
     position: absolute;
@@ -256,13 +256,20 @@ el menu se sobreposicione */
     color: var(--blanco);
 }
 .overlay{
-    opacity: 0
+    opacity: 0;
 }
 .wrapper:hover img{
-    opacity: .5
+    opacity: .5;
+    /* webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3); */
+    /* Efecto para achicar */
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
 }
 .wrapper:hover .overlay{
-    opacity: 1
+    opacity: 1;
 }
 @media (max-width: 800px){
     .content{
@@ -280,14 +287,29 @@ el menu se sobreposicione */
 
 /* Contenido */
 .contenido-principal{
-    margin-top: 40px;
+    margin-top: 20px;
+}
+.contenido-principal p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2rem;
+    text-align: justify;
+    font-size: 1rem;
+    padding: 0 20px;
 }
 
+@media (max-width:800px){
+    .contenido-principal p{
+        line-height: 1.5rem;
+        text-align: justify;
+        font-size: 0.8rem;
+        padding: 0 20px;
+    }
+}
 /*Footer*/
 .footer-sitio {
     background-color: var(--footer);
     margin-top: 30px;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
 }
 .footer-sitio h3 {
