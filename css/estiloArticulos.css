@@ -1,4 +1,7 @@
-
+body{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(87,176,213,0.47942927170868344) 45%, rgba(255,255,255,1) 100%);
+}
 @media (min-width: 768px) {
     .contenido-principal {
         width: 90%;
