@@ -1,0 +1,158 @@
+:root {
+    --header: #127DAA;
+    --footer: #57B0D5;
+    --amarillo: #FFE600;
+    --blanco: #FFFFFF;
+    --verde: #669859;
+	--newgreen: #88D275;    
+    --gris: #8C8C8C;
+    --negro: #000000;
+}
+html{
+    box-sizing: border-box;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--blanco);
+}
+
+.acercade {
+	background-color: var(--newgreen);
+	margin: 0;
+    padding: 50px 20px;  
+}
+
+.acercade p {
+	font-family: Verdana;
+    color: var(--blanco);
+    text-align: justify;
+}
+
+.divisor {
+	background-color: var(--amarillo);
+	margin: 0;
+    padding: 15px 20px; 
+}
+
+.titulo-nosotros {
+	text-align: center;
+	font-family: Verdana;
+    color: var(--blanco);
+}
+
+.titulo-divisor {
+	text-align: center;
+	font-family: Verdana;
+    color: var(--blanco);
+}
+
+.contenedor-creadores {
+	padding: 70px 20px;
+}
+
+.creator {
+	padding-top: 5px;
+    padding-bottom: 30px;
+}
+
+@media (min-width: 800px) {
+    .contenedor-creadores {
+        display: flex;
+        justify-content: space-between;
+    }
+    .creator {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creator h3 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.icono {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icono i {
+    font-size: 5rem;
+}
+
+.contacto {
+	background-color: var(--gris);
+	margin: 0;
+	padding: 30px 20px;
+}
+
+.contacto h2 {
+	font-family: Verdana;
+	text-align: center;
+	color: var(--negro);
+	padding: 20px 0;
+}
+@media (min-width: 800px) {
+    form {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .contenedor-campos {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .campo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+.campo {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.campo label {
+    flex: 0 0 6.5rem;
+    color: var(--negro);
+    font-family: Verdana;
+}
+.campo input[type="text"],
+.campo input[type="mail"],
+.campo textarea {
+    flex: 1;
+    height: 2rem;
+}
+.width100 {
+    flex: 0 0 100%;
+}
+.campo textarea {
+    height: 4rem;
+}
+.enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton {
+	font-size: 1.5rem;
+	font-family: Verdana;
+}
+
+.footer-sitio {
+	margin-top: 0px;
+}
