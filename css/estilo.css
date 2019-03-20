@@ -1,4 +1,5 @@
 :root {
+    /* Variables que almacenarán los valor de la paleta de colores */
     --header: #127DAA;
     --footer: #57B0D5;
     --amarillo: #FFE600;
@@ -20,10 +21,6 @@ html{
     clear: both;
     display: block;
 }
-.contenedor{
-    max-width: 1600px;
-    margin: 0 auto;
-}
 img{
     max-width: 100%;
 }
@@ -31,6 +28,11 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--blanco);
+}
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 /* Barra */
 /* El funcionamiento de la barra: Hay un checkbox escondido
@@ -45,23 +47,23 @@ el menu se sobreposicione */
     color: var(--blanco);
     /* sombra de la barra */
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    transition: .7s;   
+    transition: .7s;
 }
 /* Logo y texto "LAUDATO SI" */
 .logo{
     line-height: 100px;
     float: left;
     text-transform: uppercase;
-    /* padding-right: 10px; */
 }
 .menu{
     float: right;
     line-height: 100px;
 }
 .menu a{
-    color: #ffffff;
+    color: var(--blanco);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    /* font-size: 1.5rem; */
     text-transform: uppercase;
     text-decoration: none;
     padding: 0 10px;
@@ -91,11 +93,11 @@ el menu se sobreposicione */
     position: absolute;
     visibility: hidden;
     /* Para apilar elementos */
-    z-index: -1;
+     z-index: 2;
 }
 
-/* Cuando la pantalla sea de 900px o menor */
-@media (max-width:900px){
+/* Cuando la pantalla sea de 800px o menor */
+@media (max-width:800px){
     .show-menu-btn,.hide-menu-btn{
         display: block;
     }
@@ -103,11 +105,11 @@ el menu se sobreposicione */
         position: fixed;
         width: 100%;
         height: 100vh;
-        /* Color de fondo de menu responsive */
+        /* Color de fondo de menu responsive*/
         background: var(--header);
-        /* estará escondido */
+        /* estará escondido*/
         right: -100%;
-        top: 0;        
+        top: 0;
         text-align: center;
         padding: 80px 0;
         line-height: normal;
@@ -118,31 +120,212 @@ el menu se sobreposicione */
         padding: 20px;
         border-bottom:solid 2px var(--gris);
     }
-    /* Se mostrará el ícono para cerrar el menu */
+    /* Se mostrará el ícono para cerrar el menu*/
     .hide-menu-btn{
         position: absolute;
         top: 40px;
         right: 40px;
     }
-    /* Cuando el checkbox */
+    /* Cuando el checkbox esté chequiado*/
+    /* Se utiliza el selector de ~ para seleccionar todos los elementos
+    que se encuentran después del indicado*/
     #chk:checked ~ .menu{
         right: 0;
+        /* Para que cuando se abra, se sobreposiciones sobre el slider */
+        z-index: 2;
+    }
+}
+/* Slider */
+#slider{
+    overflow: hidden;
+    z-index: 1;
+}
+#slider figure{
+    position: relative;
+    /* Se le coloca 100% por cada una de la imágenes a mostrar en el Slider */
+    width: 500%;
+    margin: 0;
+    left: 0;
+    /* Como será un Slider automático realizamos una animación*/
+    animation: animate 20s linear infinite;
+}
+#slider figure img{
+    width: 20%;
+    float: left;
+}
+/* Son reglas específicas para manejar las secuecnias en la animación*/
+@keyframes animate{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+
+/*Divisor*/
+.divisor{
+    background-color: var(--amarillo);
+    margin: 0;
+    padding: 15px 20px;
+}
+.texto-divisor{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--blanco);
+    text-align: center;
+}
+@media (max-width: 800px){
+    .texto-divisor{
+        font-size: 1.2rem;
+    }
+}
+
+/* Sección de Imágenes */
+.wrapper{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.wrapper img{
+    opacity: 1;
+    display: block;
+    width:100%;
+    height: auto;
+    transition: .5s ease;
+}
+.wrapper p{
+    padding-top: 10px;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+.content{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 3.75rem;
+    color:var(--blanco);
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    background-color: var(--verde);
+}
+.content a{
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--blanco);
+}
+.overlay{
+    opacity: 0;
+}
+/* Efecto al posicionarse sobre la imágen */
+.wrapper:hover img{
+    opacity: .5;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+/* Cambiar el color/opacidad de la imagen */
+.wrapper:hover .overlay{
+    opacity: 1;
+}
+/* Media Query para las imágenes */
+@media (min-width: 800px) {
+    .contenedor-imagenes{
+        display: flex;
+        justify-content: space-between;
+    }
+    .wrapper {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+/* Media Querys para Hover en las imágenes 
+cuadno la pantalla este de 0-400px*/
+@media (max-width: 400px) and (min-width: 0px){
+    .content{
+        top: 25%;
+    }
+    .content a{
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .wrapper p{
+        font-size: 0.8rem;
+    }
+}
+/* Media Querys para Hover en las imágenes 
+cuadno la pantalla este de 401-800px*/
+@media (max-width: 800px) and (min-width: 401px){
+    .content{
+        top: 40%;
+    }
+    .content a{
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .wrapper p{
+        font-size: 0.95rem;
     }
 }
 
 /* Contenido */
 .contenido-principal{
-    margin-top: 40px;
+    margin-top: 20px;
 }
-
-
-
+.contenido-principal p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2rem;
+    text-align: justify;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+/* Media Query para el texto */
+@media (max-width:800px){
+    .contenido-principal p{
+        line-height: 1.5rem;
+        text-align: justify;
+        font-size: 0.8rem;
+        padding: 0 20px;
+    }
+}
 
 /*Footer*/
 .footer-sitio {
     background-color: var(--footer);
     margin-top: 30px;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
 }
 .footer-sitio h3 {
@@ -183,13 +366,9 @@ el menu se sobreposicione */
         width: 50%;
         text-align: left;
     }
-
     .footer-sitio .redes {
         float: right;
         width: 50%;
         text-align: right;
     }
 }
-
-
-
