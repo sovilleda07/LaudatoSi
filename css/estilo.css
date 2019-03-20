@@ -1,4 +1,5 @@
 :root {
+    /* Variables que almacenarán los valor de la paleta de colores */
     --header: #127DAA;
     --footer: #57B0D5;
     --amarillo: #FFE600;
@@ -20,20 +21,6 @@ html{
     clear: both;
     display: block;
 }
-.contenedor{
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-@media (min-width: 800px) {
-    .contenedor-imagenes{
-        display: flex;
-        justify-content: space-between;
-    }
-    .wrapper {
-        flex: 0 0 calc(33.3% - 1rem);
-    }
-}
 img{
     max-width: 100%;
 }
@@ -41,6 +28,11 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--blanco);
+}
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 /* Barra */
 /* El funcionamiento de la barra: Hay un checkbox escondido
@@ -55,7 +47,7 @@ el menu se sobreposicione */
     color: var(--blanco);
     /* sombra de la barra */
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    transition: .7s;     
+    transition: .7s;
 }
 /* Logo y texto "LAUDATO SI" */
 .logo{
@@ -101,8 +93,7 @@ el menu se sobreposicione */
     position: absolute;
     visibility: hidden;
     /* Para apilar elementos */
-    /* z-index: -1; */
-    z-index: 2;
+     z-index: 2;
 }
 
 /* Cuando la pantalla sea de 800px o menor */
@@ -118,7 +109,7 @@ el menu se sobreposicione */
         background: var(--header);
         /* estará escondido*/
         right: -100%;
-        top: 0;        
+        top: 0;
         text-align: center;
         padding: 80px 0;
         line-height: normal;
@@ -136,12 +127,13 @@ el menu se sobreposicione */
         right: 40px;
     }
     /* Cuando el checkbox esté chequiado*/
+    /* Se utiliza el selector de ~ para seleccionar todos los elementos
+    que se encuentran después del indicado*/
     #chk:checked ~ .menu{
         right: 0;
         /* Para que cuando se abra, se sobreposiciones sobre el slider */
         z-index: 2;
     }
-
 }
 /* Slider */
 #slider{
@@ -150,16 +142,18 @@ el menu se sobreposicione */
 }
 #slider figure{
     position: relative;
+    /* Se le coloca 100% por cada una de la imágenes a mostrar en el Slider */
     width: 500%;
     margin: 0;
     left: 0;
+    /* Como será un Slider automático realizamos una animación*/
     animation: animate 20s linear infinite;
 }
 #slider figure img{
     width: 20%;
     float: left;
 }
-
+/* Son reglas específicas para manejar las secuecnias en la animación*/
 @keyframes animate{
     0%{
         left: 0;
@@ -194,20 +188,18 @@ el menu se sobreposicione */
 .divisor{
     background-color: var(--amarillo);
     margin: 0;
-    padding: 15px 20px;    
+    padding: 15px 20px;
 }
 .texto-divisor{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--blanco);
     text-align: center;
 }
-
 @media (max-width: 800px){
     .texto-divisor{
         font-size: 1.2rem;
-    } 
+    }
 }
-
 
 /* Sección de Imágenes */
 .wrapper{
@@ -230,7 +222,7 @@ el menu se sobreposicione */
 .wrapper p{
     padding-top: 10px;
     text-align: justify;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 .content{
     position: absolute;
@@ -238,7 +230,7 @@ el menu se sobreposicione */
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    font-size: 60px;
+    font-size: 3.75rem;
     color:var(--blanco);
     white-space: nowrap;
     overflow: hidden;
@@ -247,7 +239,7 @@ el menu se sobreposicione */
 }
 .content a{
     font-size: 1.5rem;
-    display: block;    
+    display: block;
     text-align: center;
     padding: 10px;
     cursor: pointer;
@@ -258,30 +250,53 @@ el menu se sobreposicione */
 .overlay{
     opacity: 0;
 }
+/* Efecto al posicionarse sobre la imágen */
 .wrapper:hover img{
     opacity: .5;
-    /* webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3); */
-    /* Efecto para achicar */
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8);
 }
+/* Cambiar el color/opacidad de la imagen */
 .wrapper:hover .overlay{
     opacity: 1;
 }
-@media (max-width: 800px){
+/* Media Query para las imágenes */
+@media (min-width: 800px) {
+    .contenedor-imagenes{
+        display: flex;
+        justify-content: space-between;
+    }
+    .wrapper {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+/* Media Querys para Hover en las imágenes 
+cuadno la pantalla este de 0-400px*/
+@media (max-width: 400px) and (min-width: 0px){
     .content{
         top: 25%;
     }
     .content a{
-        font-size: 1rem;  
+        font-size: 0.9rem;
         padding: 10px;
     }
     .wrapper p{
-        font-size: 1rem;  
-
+        font-size: 0.8rem;
+    }
+}
+/* Media Querys para Hover en las imágenes 
+cuadno la pantalla este de 401-800px*/
+@media (max-width: 800px) and (min-width: 401px){
+    .content{
+        top: 40%;
+    }
+    .content a{
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .wrapper p{
+        font-size: 0.95rem;
     }
 }
 
@@ -296,7 +311,7 @@ el menu se sobreposicione */
     font-size: 1rem;
     padding: 0 20px;
 }
-
+/* Media Query para el texto */
 @media (max-width:800px){
     .contenido-principal p{
         line-height: 1.5rem;
@@ -305,6 +320,7 @@ el menu se sobreposicione */
         padding: 0 20px;
     }
 }
+
 /*Footer*/
 .footer-sitio {
     background-color: var(--footer);
@@ -350,13 +366,9 @@ el menu se sobreposicione */
         width: 50%;
         text-align: left;
     }
-
     .footer-sitio .redes {
         float: right;
         width: 50%;
         text-align: right;
     }
 }
-
-
-
