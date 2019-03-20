@@ -30,9 +30,7 @@ img{
 body{
     margin: 0;
     padding: 0;
-    background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(87,176,213,0.47942927170868344) 45%, rgba(255,255,255,1) 100%);
-    /*background-color: var(--blanco);*/
+    background-color: var(--blanco);
 }
 /* Barra */
 /* El funcionamiento de la barra: Hay un checkbox escondido
