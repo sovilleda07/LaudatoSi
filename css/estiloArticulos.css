@@ -1,77 +1,95 @@
-body{
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(87,176,213,0.47942927170868344) 45%, rgba(255,255,255,1) 100%);
-    font-family: 'Verdana', sans-serif;
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(87, 176, 213, 0.47942927170868344) 45%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  font-family: "Verdana", sans-serif;
 }
-.menu{
-    z-index: 2;
+.menu {
+  z-index: 2;
 }
 .contenedorGrid {
-    z-index: 1;
+  z-index: 1;
 }
 @media (min-width: 800px) {
-    .contenido-principal {
-        width: 90%;
-        float: left;
-        padding: 0 60px 0 0;
-    }
-    .sidebar {
-        width: 10%;
-        margin-right: 0;
-        float: right;
-        padding: 0;
-        margin-top: 40px;
-    }
+  .contenido-principal {
+    width: 90%;
+    float: left;
+    padding: 0 60px 0 0;
+  }
+  .sidebar {
+    width: 10%;
+    margin-right: 0;
+    float: right;
+    padding: 0;
+    margin-top: 40px;
+  }
+  .listado {
+    font-size: 1em;
+  }
 }
 .boton:hover {
-    background-color: #0083a4;
+  background-color: #0083a4;
 }
- 
+
 .sidebar ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 .sidebar ul li {
-    padding: 10px;
+  padding: 10px;
 }
 .sidebar ul li:hover {
-    background-color: #00b8e4;
+  background-color: #00b8e4;
 }
 .sidebar ul li a {
-    color: #00b8e4;
-    font-size: 1.25em;
-    text-decoration: none;
+  color: #00b8e4;
+  font-size: 1.25em;
+  text-decoration: none;
 }
 .sidebar ul li:hover a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .contenedorGrid {
-    position: relative;
-    width: 95%;
-    max-width: 1200px;
-    margin: auto;
+  position: relative;
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.contenedorGrid > div{
-    display: block;
-    padding: 20px;
-
+.contenedorGrid > div {
+  display: block;
+  padding: 20px;
 }
 
 .contenedorGrid p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .contenedorGrid img {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .contenedorGrid h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .contenedorGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+}
+
+.listado {
+  padding-left: 50px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+  .listado {
+    font-size: 0.8em;
+  }
 }

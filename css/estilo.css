@@ -224,6 +224,16 @@ el menu se sobreposicione */
     text-align: justify;
     font-size: 1.1rem;
 }
+.autor{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
 .content{
     position: absolute;
     top:30%;
